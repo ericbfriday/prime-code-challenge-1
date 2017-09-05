@@ -5,7 +5,6 @@ var numberOfClicks = 0;
 var onReady = function() {
   console.log('the doc is ready');
   $('#create').on('click', createDiv);
-
 };
 
 // When the DOM is loaded, our code in the onReady function will run.
@@ -40,7 +39,19 @@ function swapper() {
     $('.swap').on('click', $(this).closest('div').css('background-color', 'yellow'));    
   }
   else {
-    $('.swap').on('click', $(this).closest('div').css('background-color', 'red'));    
+    $(this).closest('div').css('background-color', 'red');    
   }
-
 } // ending swapper function
+
+/** failed attempt
+function swapper() {
+  $(this).closest('div').toggle(
+    function(){
+      $(this).closest('div').css('background-color', 'yellow')}, 
+    function(){ 
+    $(this).closest('div').css('background-color', 'red')}
+  );
+} // end swapper function
+ */
+
+
